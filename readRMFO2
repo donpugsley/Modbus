@@ -1,4 +1,4 @@
 #!/bin/bash
-cint=`modbus -b 9600 -S /dev/RS485 i@386`
+cint=`modbus -b 9600 -S /dev/RS485 i@386/h`
 echo "scale=2; $cint/100" | bc
 

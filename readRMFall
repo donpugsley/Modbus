@@ -1,8 +1,12 @@
 #!/bin/bash
-t1=`modbus -b 9600 -S /dev/RS485 i@385`
-t2=`modbus -b 9600 -S /dev/RS485 i@386`
-t3=`modbus -b 9600 -S /dev/RS485 i@387`
-t4=`modbus -b 9600 -S /dev/RS485 i@388`
+#cint=`/home/pugsley/.local/share/virtualenvs/modbus/bin/modbus -b 9600 -S /dev/ttyUSB0 i@385 i@386 i@387 i@388`
+#echo "scale=2; $cint/100" | bc
+
+# or maybe
+t1=`modbus -b 9600 -S /dev/RS485 i@385/h`
+t2=`modbus -b 9600 -S /dev/RS485 i@386/h`
+t3=`modbus -b 9600 -S /dev/RS485 i@387/h`
+t4=`modbus -b 9600 -S /dev/RS485 i@388/h`
 echo "scale=2; $t1/100; $t2/100; $t3/100; $t4/100" | bc
 
 

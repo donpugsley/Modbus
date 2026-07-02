@@ -1,0 +1,6 @@
+#!/bin/bash
+cint=`modbus -b 9600 -S /dev/ttyUSB0 i@385/h`
+degc=$(echo "scale=2; $cint/100" | bc)
+echo "# HELP RMFO1 value from modbus-RMO701-FO1"
+echo "# TYPE RMFO1 gauge"
+echo "RMFO1{cmd="modbus-RMO701-FO1"} $degc"
