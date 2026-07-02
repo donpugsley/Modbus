@@ -1,0 +1,5 @@
+#!/bin/bash
+# Uses https://github.com/favalex/modbus-cli... install with pipx install modbus_cli
+cint=`modbus -b 9600 -S /dev/RS485 i@385`
+echo "scale=2; $cint/100" | bc
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+t1=`modbus -b 9600 -S /dev/RS485 i@385`
+t2=`modbus -b 9600 -S /dev/RS485 i@386`
+t3=`modbus -b 9600 -S /dev/RS485 i@387`
+t4=`modbus -b 9600 -S /dev/RS485 i@388`
+echo "scale=2; $t1/100; $t2/100; $t3/100; $t4/100" | bc
+
+
+

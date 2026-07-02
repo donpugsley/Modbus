@@ -1,0 +1,9 @@
+#!/bin/bash
+# Log data from 4 channels of RMO701 temperature module
+while true
+do
+    data=`~/Utility/readRMFall | tr '\n' ' '`
+    nowish=`date +"%Y-%m-%dT%H:%M:%S%:z"`
+    (echo -n $nowish " " && echo $data) | tee -a RMO701.dat
+    sleep 1
+done
